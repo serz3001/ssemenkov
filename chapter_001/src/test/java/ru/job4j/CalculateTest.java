@@ -24,5 +24,4 @@ public void whenTakeNameThenTreeEchoPlusName() {
     String result = calc.echo(input);
     assertThat(result, is(expect));
 }
- 
 }
