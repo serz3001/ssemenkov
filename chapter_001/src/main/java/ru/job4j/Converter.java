@@ -3,13 +3,15 @@ package ru.job4j;
  * Корвертер валюты.
  */
 public class Converter {
+    private final int DOLLAR_COURSE = 60;
+    private final int EURO_COURSE = 70;
     /**
      * Конвертируем рубли в евро.
      * @param value рубли.
      * @return Евро.
      */
     public int rubleToEuro(int value) {
-        return value/70;
+        return value/EURO_COURSE;
     }
     /**
      * Конвертируем рубли в доллары.
@@ -17,7 +19,7 @@ public class Converter {
      * @return Доллары
      */
     public int rubleToDollar(int value) {
-        return value/60;
+        return value/DOLLAR_COURSE;
     }
     /**
      * Конвертируем евро в рубли.
@@ -25,7 +27,7 @@ public class Converter {
      * @return Евро.
      */
     public int euroToRuble(int value) {
-        return value*70;
+        return value*EURO_COURSE;
     }
     /**
      * Конвертируем доллары в рубли.
@@ -33,7 +35,7 @@ public class Converter {
      * @return Доллары
      */
     public int dollarToRuble(int value) {
-        return value*60;
+        return value*DOLLAR_COURSE;
     }
 }
 
