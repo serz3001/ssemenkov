@@ -15,10 +15,9 @@ import static org.junit.Assert.assertThat;
  */
 public class CounterTest {
     @Test
-    public void countTest(){
+    public void countTest() {
         Counter count = new Counter();
         int result = count.add(1, 10);
         assertThat(result, is(30));
-
     }
 }
