@@ -9,15 +9,12 @@ public class ThreeArrays {
         int i = 0;
         int firstInd = 0;
         int secondInd = 0;
-        while ((firstInd < first.length) && (secondInd < second.length) && (i < (first.length + second.length))) {
-                if (first[firstInd] < second[secondInd])
-                    result[i++] = first[firstInd++];
-                else
-                    result[i++] = second[secondInd++];
+        while ((firstInd < first.length) && (secondInd < second.length)) {
+            result[i++] = first[firstInd] < second[secondInd] ? first[firstInd++] : second[secondInd++];
         }
-        if (firstInd < first.length && secondInd >= second.length)
+        if (firstInd < first.length)
             System.arraycopy(first, firstInd, result, i, (first.length + second.length) - i);
-        else if (firstInd >= first.length && secondInd < second.length)
+        else if (secondInd < second.length)
             System.arraycopy(second, second[secondInd], result, result[i], (first.length + second.length) - i);
         return result;
     }
