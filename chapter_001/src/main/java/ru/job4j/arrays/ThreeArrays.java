@@ -6,28 +6,19 @@ package ru.job4j.arrays;
 public class ThreeArrays {
     public int[] arrays(int[] first, int second[]) {
         int[] result = new int[first.length + second.length];
-        int k = 0;
-        int n = 0;
-        for (int i = 0; i < (first.length + second.length); i++) {
-            if(k < first.length && n < second.length) {
-                if (first[k] < second[n]) {
-                    result[i] = first[k];
-                    k++;
-                }
-                else {
-                    result[i] = second[n];
-                    n++;
-                }
-            }
-            else if (k < first.length && n >= second.length) {
-                result[i] = first[k];
-                k++;
-            }
-            else if (k >= first.length && n < second.length) {
-                result[i] = second[n];
-                n++;
-            }
+        int i = 0;
+        int firstInd = 0;
+        int secondInd = 0;
+        while ((firstInd < first.length) && (secondInd < second.length) && (i < (first.length + second.length))) {
+                if (first[firstInd] < second[secondInd])
+                    result[i++] = first[firstInd++];
+                else
+                    result[i++] = second[secondInd++];
         }
+        if (firstInd < first.length && secondInd >= second.length)
+            System.arraycopy(first, firstInd, result, i, (first.length + second.length) - i);
+        else if (firstInd >= first.length && secondInd < second.length)
+            System.arraycopy(second, second[secondInd], result, result[i], (first.length + second.length) - i);
         return result;
     }
 }

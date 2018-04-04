@@ -14,6 +14,7 @@ public class ArrayDuplicate {
                 }
             }
         }
-        return Arrays.copyOf(array, unique);
+        array = Arrays.copyOf(array, unique);
+        return array;
     }
 }
